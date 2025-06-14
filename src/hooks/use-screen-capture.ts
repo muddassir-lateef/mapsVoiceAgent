@@ -15,7 +15,7 @@
  */
 
 import { useState, useEffect } from "react";
-import { UseMediaStreamResult } from "./use-media-stream-mux";
+import { UseMediaStreamResult } from "./use-media-stream-mux.ts";
 
 export function useScreenCapture(): UseMediaStreamResult {
   const [stream, setStream] = useState<MediaStream | null>(null);

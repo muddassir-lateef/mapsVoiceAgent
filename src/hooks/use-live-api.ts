@@ -16,13 +16,13 @@
 
 import { useCallback, useEffect, useMemo, useRef, useState } from "react";
 import {
-  MultimodalLiveAPIClientConnection,
   MultimodalLiveClient,
-} from "../lib/multimodal-live-client";
-import { LiveConfig } from "../multimodal-live-types";
-import { AudioStreamer } from "../lib/audio-streamer";
-import { audioContext } from "../lib/utils";
-import VolMeterWorket from "../lib/worklets/vol-meter";
+  MultimodalLiveAPIClientConnection,
+} from "../lib/multimodal-live-client.ts";
+import { LiveConfig } from "../multimodal-live-types.ts";
+import { AudioStreamer } from "../lib/audio-streamer.ts";
+import { audioContext } from "../lib/utils.ts";
+import VolMeterWorket from "../lib/worklets/vol-meter.ts";
 
 export type UseLiveAPIResults = {
   client: MultimodalLiveClient;
@@ -33,6 +33,11 @@ export type UseLiveAPIResults = {
   disconnect: () => Promise<void>;
   volume: number;
 };
+
+export type UseLiveAPIProps = Omit<
+  MultimodalLiveAPIClientConnection,
+  "audioStreamer"
+>;
 
 export function useLiveAPI({
   url,

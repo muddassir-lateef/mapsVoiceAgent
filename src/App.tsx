@@ -14,11 +14,11 @@
  * limitations under the License.
  */
 
-import { useRef, useState } from "react";
+import React, { useRef, useState } from "react";
 import "./App.scss";
-import { LiveAPIProvider } from "./contexts/LiveAPIContext";
-import { MapsAgent } from "./components/maps-agent/mapsAgent";
-import ControlTray from "./components/control-tray/ControlTray";
+import { LiveAPIProvider } from "./contexts/LiveAPIContext.tsx";
+import { MapsAgent } from "./components/maps-agent/mapsAgent.tsx";
+import ControlTray from "./components/control-tray/ControlTray.tsx";
 import cn from "classnames";
 import logo from "./assets/logo.png"
 
@@ -74,4 +74,4 @@ function App() {
   );
 }
 
-export default App;
+export default App; 

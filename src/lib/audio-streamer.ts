@@ -17,7 +17,7 @@
 import {
   createWorketFromSrc,
   registeredWorklets,
-} from "./audioworklet-registry";
+} from "./audioworklet-registry.ts";
 
 export class AudioStreamer {
   public audioQueue: Float32Array[] = [];

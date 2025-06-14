@@ -36,8 +36,8 @@ import {
   ToolCallCancellation,
   ToolResponseMessage,
   type LiveConfig,
-} from "../multimodal-live-types";
-import { blobToJSON, base64ToArrayBuffer } from "./utils";
+} from "../multimodal-live-types.ts";
+import { blobToJSON, base64ToArrayBuffer } from "./utils.ts";
 
 /**
  * the events that this client will emit

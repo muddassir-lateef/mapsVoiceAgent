@@ -16,13 +16,13 @@
 
 import cn from "classnames";
 
-import { memo, ReactNode, RefObject, useEffect, useRef, useState } from "react";
-import { useLiveAPIContext } from "../../contexts/LiveAPIContext";
-import { UseMediaStreamResult } from "../../hooks/use-media-stream-mux";
-import { useScreenCapture } from "../../hooks/use-screen-capture";
-import { useWebcam } from "../../hooks/use-webcam";
-import { AudioRecorder } from "../../lib/audio-recorder";
-import AudioPulse from "../audio-pulse/AudioPulse";
+import React, { memo, ReactNode, RefObject, useEffect, useRef, useState } from "react";
+import { useLiveAPIContext } from "../../contexts/LiveAPIContext.tsx";
+import { UseMediaStreamResult } from "../../hooks/use-media-stream-mux.ts";
+import { useScreenCapture } from "../../hooks/use-screen-capture.ts";
+import { useWebcam } from "../../hooks/use-webcam.ts";
+import { AudioRecorder } from "../../lib/audio-recorder.ts";
+import AudioPulse from "../audio-pulse/AudioPulse.tsx";
 import "./control-tray.scss";
 
 export type ControlTrayProps = {

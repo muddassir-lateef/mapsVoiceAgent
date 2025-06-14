@@ -17,11 +17,12 @@
 import "./logger.scss";
 
 import { Part } from "@google/generative-ai";
+import { log } from "console";
+import React, { ReactNode } from "react";
 import cn from "classnames";
-import { ReactNode } from "react";
-import { useLoggerStore } from "../../lib/store-logger";
+import { useLoggerStore } from "../../lib/store-logger.ts";
 import SyntaxHighlighter from "react-syntax-highlighter";
-import { vs2015 as dark } from "react-syntax-highlighter/dist/esm/styles/hljs";
+import { solarizedlight } from "react-syntax-highlighter/dist/esm/styles/prism";
 import {
   ClientContentMessage,
   isClientContentMessage,
@@ -101,7 +102,7 @@ const RenderPart = ({ part }: { part: Part }) =>
       <h5>executableCode: {part.executableCode.language}</h5>
       <SyntaxHighlighter
         language={part.executableCode.language.toLowerCase()}
-        style={dark}
+        style={solarizedlight}
       >
         {part.executableCode.code}
       </SyntaxHighlighter>
@@ -109,7 +110,7 @@ const RenderPart = ({ part }: { part: Part }) =>
   ) : part.codeExecutionResult ? (
     <div className="part part-codeExecutionResult">
       <h5>codeExecutionResult: {part.codeExecutionResult.outcome}</h5>
-      <SyntaxHighlighter language="json" style={dark}>
+      <SyntaxHighlighter language="json" style={solarizedlight}>
         {tryParseCodeExecutionResult(part.codeExecutionResult.output)}
       </SyntaxHighlighter>
     </div>
@@ -146,7 +147,7 @@ const ToolCallLog = ({ message }: Message) => {
       {toolCall.functionCalls.map((fc, i) => (
         <div key={fc.id} className="part part-functioncall">
           <h5>Function call: {fc.name}</h5>
-          <SyntaxHighlighter language="json" style={dark}>
+          <SyntaxHighlighter language="json" style={solarizedlight}>
             {JSON.stringify(fc, null, "  ")}
           </SyntaxHighlighter>
         </div>
@@ -177,7 +178,7 @@ const ToolResponseLog = ({ message }: Message): JSX.Element => (
       (fc) => (
         <div key={`tool-response-${fc.id}`} className="part">
           <h5>Function Response: {fc.id}</h5>
-          <SyntaxHighlighter language="json" style={dark}>
+          <SyntaxHighlighter language="json" style={solarizedlight}>
             {JSON.stringify(fc.response, null, "  ")}
           </SyntaxHighlighter>
         </div>

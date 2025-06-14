@@ -15,7 +15,8 @@
  */
 
 import { create } from "zustand";
-import { StreamingLog } from "../multimodal-live-types";
+import { devtools, persist } from "zustand/middleware";
+import { StreamingLog } from "../multimodal-live-types.ts";
 import { mockLogs } from "../components/logger/mock-logs";
 
 interface StoreLoggerState {

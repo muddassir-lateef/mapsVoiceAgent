@@ -14,12 +14,12 @@
  * limitations under the License.
  */
 
-import { audioContext } from "./utils";
-import AudioRecordingWorklet from "./worklets/audio-processing";
-import VolMeterWorket from "./worklets/vol-meter";
+import AudioRecordingWorklet from "./worklets/audio-processing.ts";
+import VolMeterWorket from "./worklets/vol-meter.ts";
 
-import { createWorketFromSrc } from "./audioworklet-registry";
+import { createWorketFromSrc } from "./audioworklet-registry.ts";
 import EventEmitter from "eventemitter3";
+import { audioContext } from "./utils.ts";
 
 function arrayBufferToBase64(buffer: ArrayBuffer) {
   var binary = "";

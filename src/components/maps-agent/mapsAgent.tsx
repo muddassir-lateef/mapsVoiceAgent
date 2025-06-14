@@ -15,8 +15,8 @@
  */
 
 import { type FunctionDeclaration, SchemaType, Part } from "@google/generative-ai";
-import { useEffect, useState, memo } from "react";
-import { useLiveAPIContext } from "../../contexts/LiveAPIContext";
+import React, { useEffect, useState, memo } from "react";
+import { useLiveAPIContext } from "../../contexts/LiveAPIContext.tsx";
 import { ToolCall } from "../../multimodal-live-types";
 
 const geocodeDeclaration: FunctionDeclaration = {
